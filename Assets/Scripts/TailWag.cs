@@ -10,12 +10,10 @@ public class TailWag : MonoBehaviour
     
     private void Update()
     {
-        wait = Time.deltaTime;
-
-        if (wait < 1)
-        {
-            this.transform.rotation = Quaternion.Euler(0, (wagSpeed * wait), 0);
-        }
+        float angle = Mathf.Sin(Time.time) * 70;
         
+        this.transform.rotation = Quaternion.Euler(0, angle, 0);
+        
+        Debug.Log(angle);
     }
 }
