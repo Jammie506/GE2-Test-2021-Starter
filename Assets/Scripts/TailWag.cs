@@ -1,23 +1,21 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class TailWag : MonoBehaviour
 {
-    [SerializeField] private Rigidbody rB;
-    [SerializeField] private Vector3 eularRot;
-    private Quaternion deltaRotation;
     public float wagSpeed;
+    private float wait;
     
-    void Start()
+    private void Update()
     {
-        eularRot = new Vector3(0, 0, wagSpeed);
-    }
+        wait = Time.deltaTime;
 
-    
-    void Update()
-    {
-        deltaRotation = Quaternion.Euler(eularRot * Time.fixedDeltaTime);
-        rB.MoveRotation(rB.rotation * deltaRotation);
+        if (wait < 1)
+        {
+            this.transform.rotation = Quaternion.Euler(0, (wagSpeed * wait), 0);
+        }
+        
     }
 }
