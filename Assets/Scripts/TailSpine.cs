@@ -42,8 +42,6 @@ public class TailSpine : MonoBehaviour
 
             GameObject bone = bones[i];
 
-            //Vector3 wantedPosition = prevBone.transform.TransformPoint(offsets[i]);
-
             Vector3 wantedPosition = (prevBone.transform.rotation * offsets[i]) + prevBone.transform.position;
 
             bone.transform.position = Vector3.Lerp(bone.transform.position
