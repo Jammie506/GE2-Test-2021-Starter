@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShipMain : MonoBehaviour
+public class DogMain : MonoBehaviour
 {
     List<MainBrain> behaviours = new List<MainBrain>();
 
@@ -19,21 +19,8 @@ public class ShipMain : MonoBehaviour
     public float maxSpeed = 5.0f;
     public float maxForce = 10.0f;
 
-    public void OnDrawGizmos()
-    {
-        Gizmos.color = Color.magenta;
-        Gizmos.DrawLine(transform.position, transform.position + velocity);
-
-        Gizmos.color = Color.blue;
-        Gizmos.DrawLine(transform.position, transform.position + acceleration);
-
-        Gizmos.color = Color.red;
-        Gizmos.DrawLine(transform.position, transform.position + force * 10);
-    }
-
     void Start()
     {
-
         MainBrain[] behaviours = GetComponents<MainBrain>();
 
         foreach (MainBrain mB in behaviours)
@@ -95,7 +82,7 @@ public class ShipMain : MonoBehaviour
     }
 
 
-    void Update()
+    /*void Update()
     {
         force = Calculate();
         acceleration = force / mass;
@@ -111,5 +98,5 @@ public class ShipMain : MonoBehaviour
             transform.position += velocity * Time.deltaTime;
             velocity *= (1.0f - (damping * Time.deltaTime));
         }
-    }
+    }*/
 }

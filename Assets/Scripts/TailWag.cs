@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WhaleHarmoics : MainBrain
+public class TailWag : MainBrain
 {
     [SerializeField] public float frequency = 0.3f;
     [SerializeField] public float radius = 10.0f;
